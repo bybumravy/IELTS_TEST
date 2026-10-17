@@ -2,6 +2,7 @@
     import com.fasterxml.jackson.core.type.TypeReference;
     import com.fasterxml.jackson.databind.JsonNode;
     import com.fasterxml.jackson.databind.ObjectMapper;
+    import jakarta.annotation.PostConstruct;
     import org.springframework.beans.factory.annotation.Value;
     import org.springframework.http.HttpEntity;
     import org.springframework.http.HttpHeaders;
@@ -29,12 +30,23 @@
     @Service
     public class ProsodyService {
 
-        private final String PRAAT_PATH = "/usr/bin/praat";
-        private final String PRAAT_SCRIPT_PATH = "/home/ubuntu/praat/script.praat"; // Script Praat
-        private final String STRESS_ANALYSIS_SCRIPT_PATH = "/home/ubuntu/praat/stressAnalysis.praat";
-        private final String INTONATION_SCRIPT_PATH = "/home/ubuntu/praat/script_intonation.praat";
-        private final String CMU_DICT_PATH = "/home/ubuntu/backend/cmudict-0.7b.txt";
-        private final String GET_DURATION = "/home/ubuntu/praat/getDuration.praat";
+        @Value("${praat.path:/usr/bin/praat}")
+        private String PRAAT_PATH;
+
+        @Value("${praat.script.path:/app/praat/script.praat}")
+        private String PRAAT_SCRIPT_PATH;
+
+        @Value("${praat.script.stress-analysis:/app/praat/stressAnalysis.praat}")
+        private String STRESS_ANALYSIS_SCRIPT_PATH;
+
+        @Value("${praat.script.intonation:/app/praat/script_intonation.praat}")
+        private String INTONATION_SCRIPT_PATH;
+
+        @Value("${praat.script.get-duration:/app/praat/getDuration.praat}")
+        private String GET_DURATION;
+
+        @Value("${cmu.dict.path:/app/cmudict-0.7b.txt}")
+        private String CMU_DICT_PATH;
 
         @Value("${openai.api.key}")
         private String openaiApiKey;
@@ -44,8 +56,11 @@
 
         private final Map<String, String> cmuDictMap = new HashMap<>(); // Lưu trữ CMU Dict
 
-
         public ProsodyService() {
+        }
+
+        @PostConstruct
+        public void init() {
             loadCmuDict();
         }
 
