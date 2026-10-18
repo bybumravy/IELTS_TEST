@@ -11,7 +11,7 @@ import { customFetch } from "@/components/sections/customFetch"
 import { DoTestSpeakingHeader } from "@/components/layout/doTest/DoTestSpeakingHeader"
 
 
-const API_URL = import.meta.env.VITE_API_URL || 'VITE_API_URL=http://api.languages.io.vn:8080';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 
 type Speaking = {
     _id: string

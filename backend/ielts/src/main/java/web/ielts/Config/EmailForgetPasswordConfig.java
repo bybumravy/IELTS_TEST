@@ -16,7 +16,7 @@ public class EmailForgetPasswordConfig {
     public void sendResetPasswordEmail(String toEmail, String token) {
         String subject = "Yêu cầu đặt lại mật khẩu";
 //        String resetUrl = "http://localhost:5173/reset-password?token=" + token;
-        String resetUrl = "https://www.languages.io.vn/reset-password?token=" + token;
+        String resetUrl = "https://ielts-test-five.vercel.app/reset-password?token=" + token;
 
 
         String htmlContent = "<!DOCTYPE html>" +
@@ -104,7 +104,7 @@ public class EmailForgetPasswordConfig {
                 "      <p>Nếu bạn không thực hiện yêu cầu này, vui lòng bỏ qua email này.</p>" +
                 "    </div>" +
                 "    <div class='footer'>" +
-                "      © 2025 <a href='https://www.languages.io.vn'>Language IELTS</a>. All rights reserved." +
+                "      © 2025 <a href='https://ielts-test-five.vercel.app'>Language IELTS</a>. All rights reserved." +
                 "    </div>" +
                 "  </div>" +
                 "</body>" +

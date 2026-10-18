@@ -69,16 +69,16 @@ public class CustomOAuth2SuccessHandler implements AuthenticationSuccessHandler{
 
         switch (roleFromQuery.toUpperCase()) {
             case "STUDENT":
-                redirectUrl = "https://www.languages.io.vn/";
+                redirectUrl = "https://ielts-test-five.vercel.app/";
                 break;
             case "ADMIN":
-                redirectUrl = "https://www.languages.io.vn/admin-page";
+                redirectUrl = "https://ielts-test-five.vercel.app/admin-page";
                 break;
             case "TEACHER":
-                redirectUrl = "https://www.languages.io.vn/staff-page";
+                redirectUrl = "https://ielts-test-five.vercel.app/staff-page";
                 break;
             default:
-                redirectUrl = "https://www.languages.io.vn/staff-page";
+                redirectUrl = "https://ielts-test-five.vercel.app/staff-page";
                 break;
         }
 

@@ -15,8 +15,8 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOrigins(
-                                "https://www.languages.io.vn",  // production domain
-                                "http://localhost:5173"          // dev mode
+                                "https://ielts-test-five.vercel.app", // Vercel production
+                                "http://localhost:5173"               // dev mode
                         )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")

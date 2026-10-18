@@ -56,8 +56,8 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(Arrays.asList(
-                "https://www.languages.io.vn", // 👈 tên miền production
-                "http://localhost:5173"         // 👈 cho phát triển local
+                "https://ielts-test-five.vercel.app", // 👈 tên miền Vercel
+                "http://localhost:5173"               // 👈 cho phát triển local
         ));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));

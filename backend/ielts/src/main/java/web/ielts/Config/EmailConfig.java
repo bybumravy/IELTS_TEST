@@ -16,8 +16,8 @@ public class EmailConfig {
 
     public void sendVerificationEmail(String toEmail, String token) {
         String subject = "Xác thực Email đăng ký tài khoản";
-        String verificationUrl = "https://www.languages.io.vn/verify-email?token=" + token;
-        //https://www.languages.io.vn/verify-email?token=
+        String verificationUrl = "https://ielts-test-five.vercel.app/verify-email?token=" + token;
+        //https://ielts-test-five.vercel.app/verify-email?token=
         String htmlContent = "<!DOCTYPE html>" +
                 "<html>" +
                 "<head>" +
@@ -102,7 +102,7 @@ public class EmailConfig {
                 "      <p>Nếu bạn không thực hiện đăng ký này, vui lòng bỏ qua email này.</p>" +
                 "    </div>" +
                 "    <div class='footer'>" +
-                "      © 2025 <a href='https://www.languages.io.vn'>Language IELTS</a>. All rights reserved." +
+                "      © 2025 <a href='https://ielts-test-five.vercel.app'>Language IELTS</a>. All rights reserved." +
                 "    </div>" +
                 "  </div>" +
                 "</body>" +
@@ -123,7 +123,7 @@ public class EmailConfig {
     }
     public void sendNotificationToStudent(String studentEmail, String testId, double bandScore) {
         String subject = "Kết quả bài Writing IELTS của bạn đã có";
-        String languageUrl = "https://www.languages.io.vn/";
+        String languageUrl = "https://ielts-test-five.vercel.app/";
 //        String languageUrl = "http://localhost:5173/";
 
         // HTML content định dạng đẹp, chuyên nghiệp
